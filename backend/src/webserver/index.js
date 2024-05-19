@@ -25,7 +25,7 @@ app.use("/api", routerV1);
 // Create HTTPS server
 const serverSecure = https.createServer(options, app);
 
-serverSecure.listen(443, () => {
+serverSecure.listen(port + 1, () => {
   logger.info("HTTPS Server running at https://localhost:443/");
 });
 
