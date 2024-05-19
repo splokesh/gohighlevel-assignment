@@ -1,9 +1,16 @@
 const httpStatus = require("http-status");
+const https = require("https");
+const fs = require("fs");
 
 const app = require("./app");
 const { config } = require("../config/env");
 const { logger } = require("../config/logger");
 const { redisClient } = require("../config/redis");
+
+const options = {
+  key: fs.readFileSync("server.key"),
+  cert: fs.readFileSync("server.cert"),
+};
 
 require("../config/mongoose");
 
@@ -14,6 +21,13 @@ const port = config.port;
 logger.info(`-- Starting server -- ${Date()}`);
 
 app.use("/api", routerV1);
+
+// Create HTTPS server
+const serverSecure = https.createServer(options, app);
+
+serverSecure.listen(443, () => {
+  logger.info("HTTPS Server running at https://localhost:443/");
+});
 
 const server = app.listen(port, () => {
   logger.info(`Server is running on port ${port}`);
@@ -39,5 +53,8 @@ process.on("SIGTERM", () => {
   redisClient.disconnect();
   server.close(() => {
     logger.info("HTTP server closed");
+  });
+  serverSecure.close(() => {
+    logger.info("HTTPs server closed");
   });
 });
