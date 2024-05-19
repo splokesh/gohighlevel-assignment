@@ -6,13 +6,21 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 const { logger } = require("../config/logger");
+const { config } = require("../config/env");
 
 const app = express();
 
 // Apply middleware
 app.use(compression());
 app.use(helmet());
-app.use(cors());
+
+const corsOptions = {
+  origin: config.frontend_url,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
