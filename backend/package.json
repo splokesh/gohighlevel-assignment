@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "webserver:start": "cross-env NODE_ENV=production && node --trace-warnings src/webserver/index",
+    "webserver:dev": "cross-env NODE_ENV=development && nodemon --trace-warnings src/webserver/index",
+    "worker:start": "cross-env NODE_ENV=production && node --trace-warnings src/workers/crawl",
+    "worker:dev": "cross-env NODE_ENV=development && nodemon --trace-warnings src/workers/crawl",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/openai": "^0.0.31",
+    "@langchain/pinecone": "^0.0.6",
+    "@pinecone-database/pinecone": "^2.2.1",
+    "amqplib": "^0.10.4",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-status": "^1.7.4",
+    "ioredis": "^5.4.1",
+    "joi": "^17.13.1",
+    "langchain": "^0.1.37",
+    "mongoose": "^8.3.5",
+    "morgan": "^1.10.0",
+    "puppeteer": "^19.11.1",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^9.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
+  }
+}

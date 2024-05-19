@@ -1,0 +1,42 @@
+:root {
+  --text-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.light-theme {
+  background-color: #ffffff;
+  color: #212121;
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.App {
+  font-family: var(--text-font);
+  text-align: center;
+  background-color: var(--primary-bg-color);
+  color: #fff;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+header {
+  display: none;
+}
+header h1 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #d9d9e3;
+  margin: auto;
+}
+.menu button {
+  background: none;
+  border: none;
+}
