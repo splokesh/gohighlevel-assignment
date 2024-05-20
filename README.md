@@ -60,3 +60,9 @@ For deployments, I used AWS EC2 for the backend and Vercel for the frontend. Unf
 https://gohighlevel-assignment.vercel.app/
 
 In above link, adding of site won't work due to Chromium issue. But in the loom it shows end-to-end working.
+
+### Loom
+
+1. [Demonstration of Go Highlevel Assignment - Part 1](https://www.loom.com/share/604180e5a4f94cc793a930e70f66846c)
+2. [Demonstration of Go Highlevel Assignment - Part 2](https://www.loom.com/share/5dfed85bb3b24698845cb94a2a72aa34)
+3. [Backend Architecture Overview 👨‍💻 - Part 3](https://www.loom.com/share/4a2e313bee44415499166f3c10db25c1)
